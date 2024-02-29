@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <v-container>
     <h1 class="text-center text-primary"> The Home View </h1>
     <v-row>
       <v-col justify="center" align="center">
@@ -13,11 +13,14 @@
         </router-link>
       </v-col>
     </v-row>
-    <reusable-search-filter />
+    <names-to-filter />
+    <occupations-to-filter />
+
   </v-container>
   <router-view />
 </template>
 
 <script setup>
-import ReusableSearchFilter from '@/components/ReusableSearchFilter.vue';
+import OccupationsToFilter from '@/components/OccupationsToFilter.vue';
+import NamesToFilter from '@/components/NamesToFilter.vue';
 </script>
