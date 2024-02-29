@@ -6,7 +6,6 @@
         <router-link :to="{ name: 'Login' }">
           <v-btn
             color="primary"
-            variant="text"
             style="margin-right: 10px;"
           >
             Login Page
@@ -14,6 +13,11 @@
         </router-link>
       </v-col>
     </v-row>
+    <reusable-search-filter />
   </v-container>
   <router-view />
 </template>
+
+<script setup>
+import ReusableSearchFilter from '@/components/ReusableSearchFilter.vue';
+</script>

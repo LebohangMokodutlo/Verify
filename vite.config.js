@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'vite';
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
@@ -5,7 +6,7 @@ import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
 import requireTransform from 'vite-plugin-require-transform';
 import vue from '@vitejs/plugin-vue';
 
-const PAGE_TITLE = 'AfriGIS - Identity Config'; // EDIT THIS
+const PAGE_TITLE = 'Verify - Look out';
 
 const htmlPlugin = () => ({
   name: 'html-transform',
@@ -25,9 +26,16 @@ export default defineConfig({
   },
   plugins: [
     vue({
-      template: { transformAssetUrls },
+      template: {
+          transformAssetUrls,
+          compilerOptions: {
+              isCustomElement: (tag) => {
+                  return tag.startsWith('v-')
+              }
+          }
+      },
       defineModel: true,
-    }),
+  }),
     vuetify({
       autoImport: true,
     }),

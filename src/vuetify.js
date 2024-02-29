@@ -64,7 +64,6 @@ const vuetify = createVuetify({
       dark: customDarkTheme,
     },
   },
-  autoImport: true, // Enable auto-import
 });
 
 export default vuetify;
