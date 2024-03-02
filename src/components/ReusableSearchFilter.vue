@@ -6,22 +6,21 @@
     />
     <v-card>
       <v-card-title>
-        Filtered List
+        {{ tableTitle }}
       </v-card-title>
       <v-card-text
-      :key="`list-${list}`"
-      v-for="(list) in filteredList"
+        v-for="item in filteredList"
+        :key="item"
       >
-        {{ list }}
+        {{ item }}
       </v-card-text>
     </v-card>
   </v-container>
 </template>
 
 <script setup>
-/* eslint-disable */
-import { ref, toRef } from 'vue';
-import { computed, defineProps, defineEmits, watch } from 'vue';
+import { ref, computed, toRef } from 'vue';
+import { defineProps } from 'vue';
 
 const props = defineProps({
   modelValue: {
@@ -32,18 +31,19 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  tableTitle: {
+    type: String,
+    required: true,
+  },
 });
-
-const emits = defineEmits(['update:modelValue']);
 
 const listFilter = ref('');
-const List = toRef(() => props.modelValue);
+const Items = toRef(props, 'modelValue');
 
 const filteredList = computed(() => {
-  return List.value.filter((item) => item.includes(listFilter.value));
-});
-
-watch(() => {
-  emits('update:modelValue', filteredList.value);
+  if (!listFilter.value) {
+    return Items.value;
+  }
+  return Items.value.filter(item => item.includes(listFilter.value));
 });
 </script>

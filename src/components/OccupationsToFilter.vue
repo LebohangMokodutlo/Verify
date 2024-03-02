@@ -2,6 +2,7 @@
   <reusable-search-filter
     v-model="Occupations"
     label="Occupations"
+    tableTitle="Occupations"
   />
 </template>
 
