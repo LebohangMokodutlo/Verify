@@ -1,11 +1,9 @@
 <template>
 <v-container>
-<reusable-search-filter
-  v-model="Names"
-  label="Names"
-  tableTitle="Names"
-/>
-Name List (parent): {{ Names }}
+  <reusable-search-filter
+    v-model="Names"
+    label="Names"
+  />
 </v-container>
 </template>
 

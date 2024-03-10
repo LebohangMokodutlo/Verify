@@ -33,7 +33,6 @@ export default defineConfig({
               }
           }
       },
-      defineModel: true,
   }),
     vuetify({
       autoImport: true,

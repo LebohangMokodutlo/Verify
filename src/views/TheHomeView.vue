@@ -15,6 +15,7 @@
     </v-row>
     <names-to-filter />
     <occupations-to-filter />
+    <define-model-usage />
 
   </v-container>
   <router-view />
@@ -23,4 +24,5 @@
 <script setup>
 import OccupationsToFilter from '@/components/OccupationsToFilter.vue';
 import NamesToFilter from '@/components/NamesToFilter.vue';
+import DefineModelUsage from '@/components/DefineModelUsage.vue';
 </script>
