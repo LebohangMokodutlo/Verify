@@ -21,7 +21,7 @@
 <script setup>
 import { defineModel, ref, computed } from 'vue';
 
-const Items = defineModel();
+const { Items } = defineModel();
 const listFilter = ref('');
 
 const filteredList = computed(() => {
