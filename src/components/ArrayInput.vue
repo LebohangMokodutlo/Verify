@@ -19,18 +19,22 @@
 <script setup>
 import { defineModel, ref } from 'vue';
   
-const Names = defineModel({
-    required: true,
-});
+const Names = defineModel();
 const Name = ref('');
 const eMessage = ref('');
 
 const addName = () => {
   if(!Name.value){
-    eMessage.value = 'enter a value before proceeding';
-    return
+    eMessage.value = 'Enter a name before proceeding';
+    return;
+  }
+
+  if(Names.value.includes(Name.value)) {
+    eMessage.value = 'Name already exists';
+    return;
   }
   Names.value.push(Name.value);
   Name.value = '';
+  eMessage.value = '';
 };
 </script>

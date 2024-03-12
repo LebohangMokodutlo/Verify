@@ -1,5 +1,7 @@
 <template>
-  <ArrayInput v-model="parentNames" />
+  <array-input
+    v-model="parentNames"
+  />
 </template>
 
 <script setup>
