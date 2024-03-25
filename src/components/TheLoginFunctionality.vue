@@ -1,3 +1,3 @@
 <template>
-    login functionality in here
+  login functionality in here
 </template>

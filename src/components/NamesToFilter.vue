@@ -1,10 +1,10 @@
 <template>
-<v-container>
-  <reusable-search-filter
-    v-model="Names"
-    label="Names"
-  />
-</v-container>
+  <v-container>
+    <reusable-search-filter
+      v-model="Names"
+      label="Names"
+    />
+  </v-container>
 </template>
 
 <script setup>

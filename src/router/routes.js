@@ -1,6 +1,6 @@
-import TheHomeView from '../views/TheHomeView.vue';
 import TheDashboardView from '@/views/TheDashboardView.vue';
 import TheLoginPage from '@/views/TheLoginPage.vue';
+import TheHomeView from '../views/TheHomeView.vue';
 
 export default [
   {

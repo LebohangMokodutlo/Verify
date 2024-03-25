@@ -28,6 +28,6 @@ const filteredList = computed(() => {
   if (!listFilter.value) {
     return Items.value;
   }
-  return Items.value.filter(item => item.includes(listFilter.value));
+  return Items.value.filter((item) => item.includes(listFilter.value));
 });
 </script>

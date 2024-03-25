@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'vite';
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
@@ -26,14 +27,12 @@ export default defineConfig({
   plugins: [
     vue({
       template: {
-          transformAssetUrls,
-          compilerOptions: {
-              isCustomElement: (tag) => {
-                  return tag.startsWith('v-')
-              }
-          }
+        transformAssetUrls,
+        compilerOptions: {
+          isCustomElement: (tag) => tag.startsWith('v-'),
+        },
       },
-  }),
+    }),
     vuetify({
       autoImport: true,
     }),
