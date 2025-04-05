@@ -23,7 +23,10 @@
 </template>
 
 <script setup>
-import { defineModel, ref, computed } from 'vue';
+import {
+  computed,
+  ref,
+} from 'vue';
 
 const Names = defineModel();
 const Name = ref('');

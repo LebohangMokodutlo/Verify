@@ -1,19 +1,22 @@
-import { fileURLToPath } from 'node:url';
-import { mergeConfig, defineConfig, configDefaults } from 'vitest/config';
-import viteConfig from './vite.config';
+/* eslint-env node */
+require('@rushstack/eslint-patch/modern-module-resolution');
+const path = require('node:path');
+const createAliasSetting = require('@vue/eslint-config-airbnb/createAliasSetting');
 
-export default mergeConfig(
-  viteConfig,
-  defineConfig({
-    server: {
-      https: false,
-    },
-    test: {
-      environment: 'jsdom',
-      reporter: 'junit',
-      outputFile: 'testReport/junit.xml',
-      exclude: [...configDefaults.exclude, 'e2e/*'],
-      root: fileURLToPath(new URL('./', import.meta.url)),
-    },
-  }),
-);
+module.exports = {
+  root: true,
+  extends: [
+    'plugin:vue/vue3-essential',
+    '@vue/eslint-config-airbnb',
+
+  ],
+  parserOptions: {
+    ecmaVersion: 'latest',
+  },
+  settings: {
+    ...createAliasSetting({
+      '@': `${path.resolve(__dirname, './src')}`,
+    }),
+  },
+
+};

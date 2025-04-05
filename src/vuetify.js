@@ -16,7 +16,6 @@ const customDarkTheme = {
     primary: '#3f51b5',
     secondary: '#03dac6',
     error: '#ff5722',
-    // Add more custom colors here
   },
 };
 
@@ -28,7 +27,6 @@ const customLightTheme = {
     primary: '#3f51b5',
     secondary: '#00ccff',
     error: '#ffcc00',
-    // Add more custom colors here
   },
 };
 
@@ -63,7 +61,7 @@ const vuetify = createVuetify({
   },
   components,
   theme: {
-    defaultTheme: 'light', // Set the default theme
+    defaultTheme: 'light',
     themes: {
       light: customLightTheme,
       dark: customDarkTheme,

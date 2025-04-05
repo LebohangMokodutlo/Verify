@@ -19,7 +19,10 @@
 </template>
 
 <script setup>
-import { defineModel, ref, computed } from 'vue';
+import {
+  computed,
+  ref,
+} from 'vue';
 
 const Items = defineModel();
 const listFilter = ref('');
